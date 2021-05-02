@@ -1,0 +1,30 @@
+<html>
+    <head> 
+        Task List
+    </head> 
+    <body>                <!--mai scrivere il codice all'interno dei tag <html>, invece scrivere dentro <head> o <body>-->
+        <table border="3">         <!--tabella-->
+            <tr>            <!--riga tabella-->
+                <th>        <!--intestazione 1^ colonna-->
+                    Task name
+                </th>
+                <th>        <!--intestazione 2^ colonna-->
+                    Is Done
+                </th>
+            </tr>
+            {% for task in TaskList: %}
+            <tr>        <!-- per ogni riga avrò due colonne.... -->
+                <td>    <!-- ogni task è a sua volta una lista -->
+                    {{ task[0] }}   <!-- colonna per il nome del task -->
+                </td>
+                <td>
+                    {{ task[1] }}   <!-- colonna per il valore "is done" -->
+                </td>
+
+            </tr>
+            {% endfor %}
+
+            </tr>
+        </table>
+    </body>
+</html>    
