@@ -3,24 +3,33 @@
         Task List
     </head> 
     <body>                <!--mai scrivere il codice all'interno dei tag <html>, invece scrivere dentro <head> o <body>-->
+        <form method="POST" action="/add">
+            <input type="text" name="taskName">
+            <input type="text" name="dueDate">
+            <input type="submit" value="Add Task">
+        </form>
         <table border="3">         <!--tabella-->
             <tr>            <!--riga tabella-->
                 <th>        <!--intestazione 1^ colonna-->
                     Task name
                 </th>
                 <th>        <!--intestazione 2^ colonna-->
-                    Is Done
+                    Is Active
                 </th>
             </tr>
             {% for task in TaskList: %}
             <tr>        <!-- per ogni riga avrò due colonne.... -->
-                <td>    <!-- ogni task è a sua volta una lista -->
-                    {{ task[0] }}   <!-- colonna per il nome del task -->
-                </td>
-                <td>
-                    {{ task[1] }}   <!-- colonna per il valore "is done" -->
-                </td>
-
+                <form>
+                    <td>    <!-- ogni task è a sua volta una lista -->
+                        {{ task[0] }}   <!-- colonna per il nome del task -->
+                    </td>
+                    <td>    <!-- ogni task è a sua volta una lista -->
+                        {{ task[1] }}   <!-- colonna per il nome del task -->
+                    </td>
+                    <td>
+                        {{ task[2] }}   <!-- colonna per il valore "is done" -->
+                    </td>
+                </form>
             </tr>
             {% endfor %}
 
