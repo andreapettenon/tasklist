@@ -19,16 +19,21 @@
             </tr>
             {% for task in TaskList: %}
             <tr>        <!-- per ogni riga avrò due colonne.... -->
-                <form>
+                <form method="POST" action="/update">
                     <td>    <!-- ogni task è a sua volta una lista -->
-                        {{ task[0] }}   <!-- colonna per il nome del task -->
-                    </td>
-                    <td>    <!-- ogni task è a sua volta una lista -->
-                        {{ task[1] }}   <!-- colonna per il nome del task -->
+                        <input type="hidden" name="id" value="{{task[0]}}" />   <!-- colonna per il nome del task -->
+                        <input type="text" name="updateTask" value="{{task[1]}}" />   <!-- colonna per il nome del task -->
                     </td>
                     <td>
                         {{ task[2] }}   <!-- colonna per il valore "is done" -->
                     </td>
+                    <td>
+                        <input type="submit" name="SaveOrDelete" value="save">
+                    </td>
+                    <td>
+                        <input type="submit" name="SaveOrDelete" value="X">
+                    </td>
+
                 </form>
             </tr>
             {% endfor %}
